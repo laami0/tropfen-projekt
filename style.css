@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  background: #000;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+#ui {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 240px;
+  padding: 16px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+}
+
+#ui label {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+
+#ui button {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 8px;
+  font-size: 14px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#ui button:hover {
+  background: #444;
+  transform: translateY(-1px);
+}
+
+canvas {
+  display: block;
+}
+
+#widthControl {
+  margin-top: 12px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+/* Basis entfernen */
+#ui input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 12px 0;
+  background: transparent;
+}
+
+/* Track als dezente Wasser-Welle */
+#ui input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    rgba(0,123,255,0.2) 0%,
+    rgba(0,123,255,0.5) 50%,
+    rgba(0,123,255,0.2) 100%
+  );
+}
+#ui input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    rgba(0,123,255,0.2) 0%,
+    rgba(0,123,255,0.5) 50%,
+    rgba(0,123,255,0.2) 100%
+  );
+}
+
+/* Thumb als Tropfen-Kugel */
+#ui input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.7),
+              inset 0 2px 4px rgba(255,255,255,0.5);
+  margin-top: -8px; /* vertical zentrieren */
+  transition: transform 0.2s;
+}
+#ui input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.7),
+              inset 0 2px 4px rgba(255,255,255,0.5);
+  transition: transform 0.2s;
+}
+
+/* Hover/Effekt beim Ziehen */
+#ui input[type="range"]::-webkit-slider-thumb:hover,
+#ui input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
